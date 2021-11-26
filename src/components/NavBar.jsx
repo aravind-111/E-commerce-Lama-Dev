@@ -11,6 +11,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   padding: 10px 20px;
   display: flex;
+  align-items: center;
 `;
 
 const Left = styled.div`
