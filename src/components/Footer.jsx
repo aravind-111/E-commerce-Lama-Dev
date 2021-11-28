@@ -8,13 +8,16 @@ import {
   Twitter,
 } from "@mui/icons-material";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   padding: 20px;
   display: flex;
+  ${mobile({ flexDirection: "column" })};
 `;
 const Left = styled.div`
   flex: 1;
+  ${mobile({ marginBottom: "20px" })}
 `;
 const Logo = styled.h1`
   /* font-size: 40px; */
@@ -45,11 +48,15 @@ const SocialIcon = styled.div`
 
 const Center = styled.div`
   flex: 1;
+  ${mobile({ display: "none" })}
 `;
 const Title = styled.div`
   font-size: 25px;
   font-weight: 500;
   margin-bottom: 40px;
+  ${mobile({
+    marginBottom: (props) => (props.bottom === "bottom" ? "10px" : "40px"),
+  })};
 `;
 const List = styled.ul`
   margin: 0px;
@@ -123,7 +130,7 @@ const Footer = () => {
         </List>
       </Center>
       <Right>
-        <Title>Contact</Title>
+        <Title bottom="bottom">Contact</Title>
         <ContactItem>
           <FmdGood style={{ marginRight: "10px" }} />
           622 Dixie Path , South Tobinchester 98336

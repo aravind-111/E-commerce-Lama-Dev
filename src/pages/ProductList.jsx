@@ -6,6 +6,7 @@ import NewsLetter from "../components/NewsLetter";
 import Footer from "../components/Footer";
 
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div``;
 
@@ -17,6 +18,7 @@ const Title = styled.h1`
 const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const Filter = styled.div`

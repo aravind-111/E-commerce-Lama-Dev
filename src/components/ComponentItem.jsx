@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   flex: 1;
-  width: 80vh;
+  width: 80vw;
   position: relative;
   margin-right: 10px;
 `;
@@ -11,6 +12,7 @@ const Image = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;
+  ${mobile({ height: "60vh", width: "100vw" })}
 `;
 const Info = styled.div`
   position: absolute;
@@ -22,6 +24,7 @@ const Info = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  ${mobile({ marginLeft: "10%" })}
 `;
 const Title = styled.h1`
   color: white;

@@ -5,6 +5,7 @@ import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import NewsLetter from "../components/NewsLetter";
+import { mobile } from "../responsive";
 
 const Container = styled.div``;
 
@@ -31,10 +32,12 @@ const TopButton = styled.button`
   background: ${(props) => (props.type === "filled" ? "black" : "transparent")};
   color: ${(props) => props.type === "filled" && "white"};
   cursor: pointer;
+  ${mobile({ padding: "10px 10px" })}
 `;
 
 const TopTexts = styled.div`
   display: flex;
+  ${mobile({ display: "none" })}
 `;
 
 const TopText = styled.div`
@@ -46,27 +49,28 @@ const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const Info = styled.div`
   flex: 3;
-  /* background: blue; */
 `;
 
 const Products = styled.div`
   display: flex;
-  /* margin-top: 10px; */
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const ProductDetails = styled.div`
   flex: 3;
-  /* background: green; */
   display: flex;
+  ${mobile({ flexDirection: "column", marginBottom: "20px" })}
 `;
 
 const Image = styled.img`
-  width: 13.2rem;
-  height: 13.2rem;
+  width: 11rem;
+  height: 11rem;
+  ${mobile({ marginLeft: "60px" })}
 `;
 
 const ProductInfo = styled.div`
@@ -75,12 +79,16 @@ const ProductInfo = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 `;
 
 const ProductName = styled.div``;
 
 const ProductId = styled.div``;
+
+const ProductMainDiv = styled.div`
+  display: flex;
+`;
 
 const ProductColor = styled.div`
   width: 20px;
@@ -94,19 +102,17 @@ const ProductSize = styled.div``;
 
 const PriceDetails = styled.div`
   flex: 1;
-  /* padding: 5rem; */
   display: flex;
   flex-direction: column;
   gap: 1rem;
   justify-content: center;
   align-items: center;
-  /* background: red; */
 `;
 
 const ProductQty = styled.div`
   display: flex;
   gap: 10px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   align-items: center;
 `;
 
@@ -130,6 +136,7 @@ const Summary = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  ${mobile({ marginTop: "30px", gap: "20px" })}
 `;
 
 const SummaryTitle = styled.div`
@@ -145,9 +152,13 @@ const SummaryItemText = styled.div``;
 const SummaryItemPrice = styled.div``;
 
 const Button = styled.button`
-  padding: 7px 5px;
+  padding: 10px;
   cursor: pointer;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  background: #000;
+  color: white;
+  font-weight: 600;
+  border: none;
 `;
 
 const Cart = () => {
@@ -180,7 +191,10 @@ const Cart = () => {
                   <ProductId>
                     <b>ID : </b>97563409
                   </ProductId>
-                  <ProductColor color="black"></ProductColor>
+                  <ProductMainDiv>
+                    <b>Color :&nbsp; </b>
+                    <ProductColor color="black"></ProductColor>
+                  </ProductMainDiv>
                   <ProductSize>
                     <b>Size : </b> 37.5
                   </ProductSize>
@@ -209,7 +223,10 @@ const Cart = () => {
                   <ProductId>
                     <b>ID : </b>938137182
                   </ProductId>
-                  <ProductColor color="gray"></ProductColor>
+                  <ProductMainDiv>
+                    <b>Color :&nbsp; </b>
+                    <ProductColor color="grey"></ProductColor>
+                  </ProductMainDiv>
                   <ProductSize>
                     <b>Size : </b> M
                   </ProductSize>
@@ -243,7 +260,7 @@ const Cart = () => {
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>$ 80</SummaryItemPrice>
             </SummaryItem>
-            <Button>PLACE YOUR BUTTON</Button>
+            <Button>PLACE YOUR ORDER</Button>
           </Summary>
         </Bottom>
       </Wrapper>

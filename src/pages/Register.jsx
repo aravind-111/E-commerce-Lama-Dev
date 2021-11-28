@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   background: linear-gradient(
@@ -19,6 +20,8 @@ const Wrapper = styled.div`
   padding: 20px;
   width: 40%;
   background: #ffffff;
+  border-radius: 5px;
+  ${mobile({ width: "50%", padding: "50px" })}
 `;
 
 const Title = styled.h1`

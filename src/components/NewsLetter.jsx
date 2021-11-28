@@ -1,5 +1,6 @@
 import { Send } from "@mui/icons-material";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   height: 50vh;
@@ -18,13 +19,15 @@ const Title = styled.h1`
 const Desc = styled.div`
   font-size: 24px;
   margin-bottom: 20px;
+  ${mobile({ textAlign: "center" })}
 `;
 const SearchContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: 100vh;
+  width: 40%;
   background: white;
   justify-content: space-between;
+  ${mobile({ width: "70%" })}
 `;
 const Input = styled.input`
   border: none;

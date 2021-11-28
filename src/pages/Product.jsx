@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import NewsLetter from "../components/NewsLetter";
 import Footer from "../components/Footer";
 import { Add, Remove } from "@mui/icons-material";
+import { mobile } from "../responsive";
 
 const Container = styled.div``;
 
@@ -11,12 +12,17 @@ const Wrapper = styled.div`
   padding: 20px;
   margin: 20px;
   display: flex;
+  ${mobile({ flexDirection: "column", margin: "10px" })}
 `;
 
 const ImgContainer = styled.div`
   width: 80vh;
   height: 100vh;
   flex: 1;
+  ${mobile({
+    width: "60vw",
+    marginLeft: "30px",
+  })}
 `;
 
 const Image = styled.img`
@@ -28,11 +34,13 @@ const Image = styled.img`
 const InfoContainer = styled.div`
   flex: 1;
   padding: 0px 50px;
+  ${mobile({ padding: "0px" })}
 `;
 
 const Title = styled.div`
   font-size: 50px;
   margin-bottom: 30px;
+  /* ${mobile({ flexDirection: "column" })} */
 `;
 
 const Desc = styled.div``;
@@ -45,17 +53,20 @@ const Price = styled.div`
 const FilterContainer = styled.div`
   display: flex;
   margin-top: 50px;
+  ${mobile({ justifyContent: "space-between" })}
 `;
 
 const Filter = styled.div`
   display: flex;
   align-items: center;
   margin-right: 20px;
+  ${mobile({ margin: "0px", marginBottom: "10px" })}
 `;
 
 const FilterTitle = styled.div`
   font-size: 20px;
   margin-right: 20px;
+  ${mobile({ fontSize: "20px" })}
 `;
 
 const FilterColor = styled.div`
@@ -65,6 +76,7 @@ const FilterColor = styled.div`
   border-radius: 50%;
   margin-right: 10px;
   cursor: pointer;
+  ${mobile({ width: "20px", height: "20px" })}
 `;
 
 const FilterSize = styled.select`
@@ -77,6 +89,7 @@ const FilterSizeOption = styled.option``;
 const AddContainer = styled.div`
   margin-top: 50px;
   display: flex;
+  ${mobile({ justifyContent: "space-between" })}
 `;
 
 const AmountContainer = styled.div`
@@ -103,6 +116,7 @@ const Button = styled.button`
   border: 2px solid teal;
   cursor: pointer;
   font-weight: 500;
+  ${mobile({ padding: "0px 20px" })}
 `;
 
 const Product = () => {

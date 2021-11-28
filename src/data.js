@@ -15,7 +15,7 @@ export const sliderItems = [
   },
   {
     id: 3,
-    img: "https://www.unomatchshop.com/wp-content/uploads/2016/12/png-2.png",
+    img: "https://pngimg.com/uploads/thinking_woman/thinking_woman_PNG11645.png",
     title: "LOUNGEWEAR LOVE",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "fbf0f4",
